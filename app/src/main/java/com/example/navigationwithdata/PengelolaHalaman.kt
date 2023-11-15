@@ -80,7 +80,7 @@ fun EsJumboApp(
         {
             composable(route = PengelolaHalaman.Home.name){
                 HalamanHome (
-                    onNextButtonClicked = { navController.navigate(PengelolaHalaman.Rasa.name) })
+                    onNextButtonClicked = { navController.navigate(PengelolaHalaman.Form.name) })
             }
             composable(PengelolaHalaman.Form.name){
                 HalamanForm(onSubmitButtonClick = {
@@ -95,7 +95,7 @@ fun EsJumboApp(
                     onConfirmButtonClicked = {viewModel.setJumlah(it)},
                     onNextButtonClicked = { navController.navigate(PengelolaHalaman.Summary.name) },
                     onCancelButtonClicked = {
-                        cancelOrderAndNavigateToHome(
+                        cancelOrderAndNavigateToForm(
                             viewModel,
                             navController
                         )
@@ -114,6 +114,13 @@ private fun cancelOrderAndNavigateToHome(
 ){
     viewModel.resetOrder()
     navController.popBackStack(PengelolaHalaman.Home.name, inclusive = false)
+}
+private fun cancelOrderAndNavigateToForm(
+    viewModel: OrderViewModel,
+    navController: NavHostController
+){
+    viewModel.resetForm()
+    navController.popBackStack(PengelolaHalaman.Form.name, inclusive = false)
 }
 private fun cancelOrderAndNavigateToRasa(
     navController: NavHostController
