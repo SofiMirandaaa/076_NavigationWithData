@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">NavigationWithData</string>
     <string name="back_button">kembali</string>
+    <string name="nama">Nama</string>
+    <string name="alamat">Alamat</string>
+    <string name="telepon">No Telepon</string>
+    <string name="submit">Submit</string>
     <string name="confirm">konfirmasi</string>
     <string name="next">lanjut</string>
     <string name="cancel">batal</string>
