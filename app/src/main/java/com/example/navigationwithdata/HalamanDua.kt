@@ -28,7 +28,7 @@ fun HalamanDua(
 ){
     val items = listOf(
         Pair(stringResource(R.string.quantity), orderUIState.jumlah),
-        Pair(stringResource(R.string.flavour), orderUIState.rasa)
+        Pair(stringResource(R.string.flavour), orderUIState.rasa),
     )
     Column (
         modifier = modifier,
@@ -51,26 +51,27 @@ fun HalamanDua(
                 modifier = Modifier.align(Alignment.End)
             )
         }
-        Row(
-            modifier = Modifier
-                .weight(1f, false)
-                .padding(dimensionResource(R.dimen.padding_medium))
-        ) {
+
             Column(
                 verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_small))
             ) {
-                Button(
-                    modifier = Modifier.fillMaxWidth(),
-                    onClick = {}
+                Row(
+                    modifier = Modifier
+                        .weight(1f, false)
+                        .padding(dimensionResource(R.dimen.padding_medium))
                 ) {
-                    Text(stringResource(R.string.send))
-                }
-                OutlinedButton(
-                    modifier = Modifier.fillMaxWidth(),
-                    onClick = onCancelButtonClicked
-                ) {
-                    Text(stringResource(R.string.cancel))
-                }
+                    Button(
+                        modifier = Modifier.fillMaxWidth(),
+                        onClick = {}
+                    ) {
+                        Text(stringResource(R.string.send))
+                    }
+                    OutlinedButton(
+                        modifier = Modifier.fillMaxWidth(),
+                        onClick = onCancelButtonClicked
+                    ) {
+                        Text(stringResource(R.string.cancel))
+                    }
             }
         }
     }
